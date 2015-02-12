@@ -8,7 +8,8 @@ $(document).ready(function () {
 			$listGroup: $('#my-hotel .list-group'),
 			$all: $('#all-hotels'),
 			all: data,
-			constructor: Hotel
+			constructor: Hotel,
+			variable: '/hotel'
 		});
 		// remove a hotel from the current day
 		Hotel.prototype.delete = function () {
@@ -19,6 +20,8 @@ $(document).ready(function () {
 		};
 	});
 	// construct a new hotel for the current day
+
+
 	Hotel = function (data) {
 		var self = this;
 		eachKeyValue(data, function (key, val) {

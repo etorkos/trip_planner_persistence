@@ -8,7 +8,8 @@ $(document).ready(function () {
 			$listGroup: $('#my-restaurants .list-group'),
 			$all: $('#all-restaurants'),
 			all: restaurantData,
-			constructor: Restaurant
+			constructor: Restaurant,
+			variable: '/restaurants'
 		});
 
 		// remove a restaurant from the current day

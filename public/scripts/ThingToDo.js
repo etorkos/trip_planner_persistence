@@ -8,7 +8,8 @@ $(document).ready(function () {
 			$listGroup: $('#my-things-to-do .list-group'),
 			$all: $('#all-things-to-do'),
 			all: data,
-			constructor: ThingToDo
+			constructor: ThingToDo,
+			variable: '/thingsToDo'
 		});
 
 		// remove a thing to do from the current day

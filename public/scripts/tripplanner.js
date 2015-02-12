@@ -8,6 +8,6 @@ var days, currentDay;
 
 $(document).ready(function () {
 	days = [];
-	currentDay = new Day();
-	currentDay.$button.addClass('current-day');
+	// currentDay = new Day();
+	// currentDay.$button.addClass('current-day');
 });

@@ -3,13 +3,21 @@ var generateAttraction;
 $(document).ready(function () {
 	generateAttraction = function (config) {
 		config.$all.find('.add').on('click', function () {
+			console.log('adding an event');
 			var attraction = config.$all.find(':selected').data();
+			console.log(config);
+			$.ajax({type: 'POST', url: "/days/"+currentDay.number+config.variable, data: attraction}).then(function(){
+				console.log('Finished the loop');
+			})
 			new config.constructor(attraction);
+
 		});
 		config.all.forEach(function (attraction) {
 			var $option = $('<option></option>').text(attraction.name).data(attraction);
 			config.$all.find('select').append($option);
 		});
+	
+
 		return {
 			// erase an attraction's marker
 			eraseMarker: function () {
@@ -51,6 +59,10 @@ $(document).ready(function () {
 				this.$itineraryItem = $item;
 				var self = this;
 				$button.on('click', function () {
+					$.ajax({type: 'DELETE', url: "/days/"+currentDay.number+config.variable, data: self}).then(function(){
+							console.log('Finished the loop');
+		
+					})
 					self.delete();
 				});
 				return this;
